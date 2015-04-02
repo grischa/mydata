@@ -2,8 +2,8 @@
 import wx
 import wx.dataview as dv
 
-from GroupsModel import GroupsModel
-from GroupModel import GroupModel
+from groups_model import GroupsModel
+from group_model import GroupModel
 
 
 class GroupsView(wx.Panel):

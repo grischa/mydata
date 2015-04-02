@@ -13,7 +13,7 @@ os.system("del /Q dist\\*.*")
 
 os.system("C:\\Python27\\python.exe .\\pyinstaller\\pyinstaller.py "
           "--name \"Exit MyData\" "
-          "--icon=favicon.ico --windowed ExitMyData.py")
+          "--icon=favicon.ico --windowed exit_my_data.py")
 
 os.system("signtool sign -f \"" + code_signing_certificate + "\" -p " +
           code_signing_certificate_password + " \"dist\Exit MyData\*.exe\"")

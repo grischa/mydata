@@ -1,5 +1,5 @@
 import wx.dataview
-from GroupModel import GroupModel
+from group_model import GroupModel
 import os
 import threading
 

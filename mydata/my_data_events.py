@@ -6,10 +6,10 @@ import traceback
 import sys
 
 from settings_model import SettingsModel
-from UploaderModel import UploaderModel
-from Exceptions import NoActiveNetworkInterface
-from Exceptions import IncompatibleMyTardisVersion
-from Exceptions import DuplicateKey
+from uploader_model import UploaderModel
+from exceptions import NoActiveNetworkInterface
+from exceptions import IncompatibleMyTardisVersion
+from exceptions import DuplicateKey
 from logger.Logger import logger
 
 MYDATA_EVENT_TYPE = wx.NewEventType()

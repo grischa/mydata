@@ -6,8 +6,8 @@ import urllib
 
 from logger.Logger import logger
 from replica_model import ReplicaModel
-from Exceptions import DoesNotExist
-from Exceptions import MultipleObjectsReturned
+from exceptions import DoesNotExist
+from exceptions import MultipleObjectsReturned
 
 
 class DataFileModel(object):

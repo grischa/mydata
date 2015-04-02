@@ -1,6 +1,6 @@
 import wx.dataview
 from user_model import UserModel
-from GroupModel import GroupModel
+from group_model import GroupModel
 import os
 import threading
 

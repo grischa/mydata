@@ -10,10 +10,10 @@ import traceback
 
 from logger.Logger import logger
 from settings_model import SettingsModel
-from Exceptions import DuplicateKey
-from Exceptions import IncompatibleMyTardisVersion
-import MyDataEvents as mde
-from DragAndDrop import MyDataSettingsDropTarget
+from exceptions import DuplicateKey
+from exceptions import IncompatibleMyTardisVersion
+import my_data_events as mde
+from drag_and_drop import MyDataSettingsDropTarget
 
 
 class SettingsDialog(wx.Dialog):

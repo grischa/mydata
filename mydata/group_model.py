@@ -3,7 +3,7 @@ import json
 import urllib
 
 from logger.Logger import logger
-from Exceptions import DoesNotExist
+from exceptions import DoesNotExist
 
 
 class GroupModel():

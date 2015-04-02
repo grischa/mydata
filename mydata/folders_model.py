@@ -2,7 +2,7 @@ import wx
 import wx.dataview
 from folder_model import FolderModel
 from user_model import UserModel
-from GroupModel import GroupModel
+from group_model import GroupModel
 from experiment_model import ExperimentModel
 import threading
 import os
@@ -11,8 +11,8 @@ import traceback
 from datetime import datetime
 
 from logger.Logger import logger
-from Exceptions import InvalidFolderStructure
-from Exceptions import DoesNotExist
+from exceptions import InvalidFolderStructure
+from exceptions import DoesNotExist
 
 
 # This model class provides the data to the view when it is asked for.
@@ -306,7 +306,7 @@ class FoldersModel(wx.dataview.PyDataViewIndexListModel):
 
     def Contains(self, path):
         import os
-        from Win32SamePath import Win32SamePath
+        from win32_same_path import Win32SamePath
         win32SamePath = Win32SamePath()
         dir1 = path
         for row in range(0, self.GetCount()):

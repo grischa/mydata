@@ -3,11 +3,11 @@ import json
 import urllib2
 
 from logger.Logger import logger
-from Exceptions import Unauthorized
-from Exceptions import DoesNotExist
-from Exceptions import MultipleObjectsReturned
+from exceptions import Unauthorized
+from exceptions import DoesNotExist
+from exceptions import MultipleObjectsReturned
 from user_model import UserProfileModel
-from ObjectAclModel import ObjectAclModel
+from object_acl_model import ObjectAclModel
 from schema_model import SchemaModel
 
 

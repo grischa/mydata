@@ -4,7 +4,7 @@ import urllib
 
 from logger.Logger import logger
 from facility_model import FacilityModel
-from Exceptions import Unauthorized
+from exceptions import Unauthorized
 
 
 class InstrumentModel():

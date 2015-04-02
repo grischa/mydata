@@ -15,7 +15,7 @@ import subprocess
 import hashlib
 import poster
 
-import OpenSSH
+import open_ssh
 
 from experiment_model import ExperimentModel
 from dataset_model import DatasetModel
@@ -26,13 +26,13 @@ from UploadModel import UploadModel
 from UploadModel import UploadStatus
 from folder_model import FolderModel
 from DataFileModel import DataFileModel
-from Exceptions import DoesNotExist
-from Exceptions import MultipleObjectsReturned
-from Exceptions import Unauthorized
-from Exceptions import InternalServerError
-from Exceptions import StagingHostRefusedSshConnection
-from Exceptions import StagingHostSshPermissionDenied
-from Exceptions import ScpException
+from exceptions import DoesNotExist
+from exceptions import MultipleObjectsReturned
+from exceptions import Unauthorized
+from exceptions import InternalServerError
+from exceptions import StagingHostRefusedSshConnection
+from exceptions import StagingHostSshPermissionDenied
+from exceptions import ScpException
 
 from logger.Logger import logger
 
@@ -40,7 +40,7 @@ import wx
 import wx.lib.newevent
 import wx.dataview
 
-from DragAndDrop import MyFolderDropTarget
+from drag_and_drop import MyFolderDropTarget
 from add_folder_dialog import AddFolderDialog
 
 
@@ -831,7 +831,7 @@ class VerifyDatafileRunnable():
                     bytesUploadedToStaging = 0
                     try:
                         bytesUploadedToStaging = \
-                            OpenSSH.GetBytesUploadedToStaging(
+                            open_ssh.GetBytesUploadedToStaging(
                                 replicas[0].GetUri(),
                                 username, privateKeyFilePath, host,
                                 self.verificationModel)
@@ -1181,7 +1181,7 @@ class UploadDatafileRunnable():
                             uri = response.json()['replicas'][0]['uri']
                         while True:
                             try:
-                                OpenSSH.UploadFile(dataFilePath,
+                                open_ssh.UploadFile(dataFilePath,
                                                    dataFileSize,
                                                    username,
                                                    privateKeyFilePath,

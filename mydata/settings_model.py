@@ -11,11 +11,11 @@ from datetime import datetime
 from logger.Logger import logger
 from user_model import UserModel
 from facility_model import FacilityModel
-from InstrumentModel import InstrumentModel
-from UploaderModel import UploaderModel
-from Exceptions import DuplicateKey
-from Exceptions import Unauthorized
-from Exceptions import IncompatibleMyTardisVersion
+from instrument_model import InstrumentModel
+from uploader_model import UploaderModel
+from exceptions import DuplicateKey
+from exceptions import Unauthorized
+from exceptions import IncompatibleMyTardisVersion
 
 
 class SettingsModel():

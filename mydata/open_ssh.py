@@ -26,11 +26,11 @@ import errno
 import getpass
 
 from logger.Logger import logger
-from Exceptions import SshException
-from Exceptions import ScpException
-from Exceptions import StagingHostRefusedSshConnection
-from Exceptions import StagingHostSshPermissionDenied
-from Exceptions import PrivateKeyDoesNotExist
+from exceptions import SshException
+from exceptions import ScpException
+from exceptions import StagingHostRefusedSshConnection
+from exceptions import StagingHostSshPermissionDenied
+from exceptions import PrivateKeyDoesNotExist
 from UploadModel import HumanReadableSizeString
 
 

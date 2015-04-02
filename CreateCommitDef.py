@@ -13,6 +13,6 @@ def run():
     assert stdout[0] == 'commit'
     commit = stdout[1]
 
-    f = open('mydata/CommitDef.py', 'w')
+    f = open('mydata/commit_def.py', 'w')
     f.write('LATEST_COMMIT = "' + commit + '"\n')
     f.close()

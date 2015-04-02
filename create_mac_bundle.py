@@ -54,7 +54,7 @@ Traditionally, this script would be named setup.py
 import sys
 sys.path.append('mydata')
 from setuptools import setup
-import MyDataVersionNumber as MyDataVersionNumber
+import version as MyDataVersionNumber
 import requests
 import os
 import pkgutil

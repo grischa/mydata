@@ -67,13 +67,13 @@ import traceback
 from datetime import datetime
 import wx
 
-import MyDataVersionNumber as MyDataVersionNumber
+import version as MyDataVersionNumber
 from logger.Logger import logger
-import OpenSSH as OpenSSH
-from Exceptions import DoesNotExist
-from Exceptions import PrivateKeyDoesNotExist
-from Exceptions import NoActiveNetworkInterface
-from Exceptions import StringTooLongForField
+import open_ssh as OpenSSH
+from exceptions import DoesNotExist
+from exceptions import PrivateKeyDoesNotExist
+from exceptions import NoActiveNetworkInterface
+from exceptions import StringTooLongForField
 
 
 defaultStartupInfo = None

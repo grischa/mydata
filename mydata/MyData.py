@@ -9,30 +9,30 @@ import threading
 import argparse
 from datetime import datetime
 
-import CommitDef
-import MyDataVersionNumber
-from FoldersView import FoldersView
+import commit_def
+import version
+from folders_view import FoldersView
 from folders_model import FoldersModel
-from FoldersController import FoldersController
+from folders_controller import FoldersController
 from users_view import UsersView
 from users_model import UsersModel
 # from GroupsView import GroupsView
-from GroupsModel import GroupsModel
+from groups_model import GroupsModel
 from verifications_view import VerificationsView
 from verifications_model import VerificationsModel
-from UploadsView import UploadsView
-from UploadsModel import UploadsModel
-from UploaderModel import UploaderModel
-from LogView import LogView
+from uploads_view import UploadsView
+from uploads_model import UploadsModel
+from uploader_model import UploaderModel
+from log_view import LogView
 from settings_model import SettingsModel
-from SettingsDialog import SettingsDialog
-from Exceptions import NoActiveNetworkInterface
-from Exceptions import InvalidFolderStructure
-from EnhancedStatusBar import EnhancedStatusBar
+from settings_dialog import SettingsDialog
+from exceptions import NoActiveNetworkInterface
+from exceptions import InvalidFolderStructure
+from enhanced_status_bar import EnhancedStatusBar
 from logger.Logger import logger
-from MyDataTaskBarIcon import MyDataTaskBarIcon
-from MyDataProgressDialog import MyDataProgressDialog
-import MyDataEvents as mde
+from my_data_task_bar_icon import MyDataTaskBarIcon
+from my_data_progress_dialog import MyDataProgressDialog
+import my_data_events as mde
 
 
 class NotebookTabs:
@@ -132,8 +132,8 @@ class MyData(wx.App):
             return False
 
         logger.debug("MyData version:   " +
-                     MyDataVersionNumber.versionNumber)
-        logger.debug("MyData commit:  " + CommitDef.LATEST_COMMIT)
+                     version.versionNumber)
+        logger.debug("MyData commit:  " + commit_def.LATEST_COMMIT)
         appname = "MyData"
         appauthor = "Monash University"
         appdirPath = appdirs.user_data_dir(appname, appauthor)
@@ -159,7 +159,7 @@ class MyData(wx.App):
         # parser.add_argument("--loglevel", help="set logging verbosity")
         args, unknown = parser.parse_known_args()
         if args.version:
-            print "MyData %s" % MyDataVersionNumber.versionNumber
+            print "MyData %s" % version.versionNumber
             os._exit(0)
         args, unknown = parser.parse_known_args()
         self.settingsModel.SetBackgroundMode(args.background)
@@ -878,8 +878,8 @@ class MyData(wx.App):
               "(Monash University, Australia)\n\n" \
               "MyData is open source (GPL3) software available from " \
               "https://github.com/monash-merc/mydata\n\n" \
-              "Version:   " + MyDataVersionNumber.versionNumber + "\n" \
-              "Commit:  " + CommitDef.LATEST_COMMIT + "\n"
+              "Version:   " + version.versionNumber + "\n" \
+              "Commit:  " + commit_def.LATEST_COMMIT + "\n"
         dlg = wx.MessageDialog(None, msg, "About MyData",
                                wx.OK | wx.ICON_INFORMATION)
         dlg.ShowModal()

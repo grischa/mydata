@@ -3,7 +3,7 @@ import json
 import urllib
 
 from logger.Logger import logger
-from GroupModel import GroupModel
+from group_model import GroupModel
 
 
 class FacilityModel():

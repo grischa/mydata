@@ -1,3 +1,7 @@
+"""
+custom exception classes
+"""
+
 class DuplicateKey(Exception):
 
     def __init__(self, message):

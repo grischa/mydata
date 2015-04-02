@@ -86,7 +86,7 @@ if sys.platform.startswith("win"):
     defaultCreationFlags = win32process.CREATE_NO_WINDOW
 
 
-class UploaderModel():
+class UploaderModel(object):
 
     def __init__(self, settingsModel):
         self.settingsModel = settingsModel
@@ -547,9 +547,3 @@ class UploaderModel():
                     activeInterfaces.append(interface)
 
         return activeInterfaces
-
-    def GetSettingsModel(self):
-        return self.settingsModel
-
-    def SetSettingsModel(self, settingsModel):
-        self.settingsModel = settingsModel

@@ -1,45 +1,50 @@
+'''
+This model class provides the data to the view when it is asked for.
+Since it is a list-only model (no hierachical data) then it is able
+to be referenced by row rather than by item object, so in this way
+it is easier to comprehend and use than other model types.  In this
+example we also provide a Compare function to assist with sorting of
+items in our model.  Notice that the data items in the data model
+object don't ever change position due to a sort or column
+reordering.  The view manages all of that and maps view rows and
+columns to the model's rows and columns as needed.
+
+Our data is stored in a list of UploadModel objects.
+
+'''
 import wx.dataview
 import threading
 import traceback
 
-from UploadModel import UploadModel
-from UploadModel import UploadStatus
+from upload_model import UploadStatus
 from logger.Logger import logger
 
-# This model class provides the data to the view when it is asked for.
-# Since it is a list-only model (no hierachical data) then it is able
-# to be referenced by row rather than by item object, so in this way
-# it is easier to comprehend and use than other model types.  In this
-# example we also provide a Compare function to assist with sorting of
-# items in our model.  Notice that the data items in the data model
-# object don't ever change position due to a sort or column
-# reordering.  The view manages all of that and maps view rows and
-# columns to the model's rows and columns as needed.
-#
-# Our data is stored in a list of UploadModel objects.
 
-
-class ColumnType:
+class ColumnType(object):
+    '''replace with simpler data structure'''
     TEXT = 0
     BITMAP = 1
     PROGRESS = 2
 
 
 class UploadsModel(wx.dataview.PyDataViewIndexListModel):
+    '''
+    wx list class that holds many uploads
+    '''
 
     def __init__(self):
 
-        self.uploadsData = []
+        self.uploads_data = []
 
         wx.dataview.PyDataViewIndexListModel.__init__(self,
-                                                      len(self.uploadsData))
+                                                      len(self.uploads_data))
 
         # Unfiltered uploads data:
-        self.uud = self.uploadsData
+        self.uud = self.uploads_data
         # Filtered uploads data:
         self.fud = list()
         self.filtered = False
-        self.searchString = ""
+        self.search_string = ""
 
         self.columnNames = ("Id", "Folder", "Subdirectory", "Filename",
                             "File Size", "Status", "Progress", "Message")
@@ -63,18 +68,18 @@ class UploadsModel(wx.dataview.PyDataViewIndexListModel):
         self.failedIcon = wx.Image('png-normal/icons16x16/Delete.png',
                                    wx.BITMAP_TYPE_PNG).ConvertToBitmap()
 
-    def Filter(self, searchString):
-        self.searchString = searchString
-        q = self.searchString.lower()
+    def Filter(self, search_string):
+        self.search_string = search_string
+        q = self.search_string.lower()
         if not self.filtered:
             # This only does a shallow copy:
-            self.uud = list(self.uploadsData)
+            self.uud = list(self.uploads_data)
 
         for row in reversed(range(0, self.GetRowCount())):
-            ud = self.uploadsData[row]
+            ud = self.uploads_data[row]
             if q not in ud.GetFilename().lower():
                 self.fud.append(ud)
-                del self.uploadsData[row]
+                del self.uploads_data[row]
                 # Notify the view(s) using this model that it has been removed
                 if threading.current_thread().name == "MainThread":
                     self.RowDeleted(row)
@@ -91,19 +96,19 @@ class UploadsModel(wx.dataview.PyDataViewIndexListModel):
                 col = 0
                 ascending = True
                 while row < self.GetRowCount() and \
-                        self.CompareUploadRecords(self.uploadsData[row],
+                        self.CompareUploadRecords(self.uploads_data[row],
                                                   fud, col, ascending) < 0:
                     row = row + 1
 
                 if row == self.GetRowCount():
-                    self.uploadsData.append(fud)
+                    self.uploads_data.append(fud)
                     # Notify the view that it has been added
                     if threading.current_thread().name == "MainThread":
                         self.RowAppended()
                     else:
                         wx.CallAfter(self.RowAppended)
                 else:
-                    self.uploadsData.insert(row, fud)
+                    self.uploads_data.insert(row, fud)
                     # Notify the view that it has been added
                     if threading.current_thread().name == "MainThread":
                         self.RowInserted(row)
@@ -122,27 +127,27 @@ class UploadsModel(wx.dataview.PyDataViewIndexListModel):
             return "long"
         return "string"
 
-    # This method is called to provide the uploadsData object for a
+    # This method is called to provide the uploads_data object for a
     # particular row,col
     def GetValueByRow(self, row, col):
         try:
             if col == self.columnNames.index("Status"):
                 icon = wx.NullBitmap
-                if self.uploadsData[row].GetStatus() == \
+                if self.uploads_data[row].GetStatus() == \
                         UploadStatus.IN_PROGRESS:
                     icon = self.inProgressIcon
-                elif self.uploadsData[row].GetStatus() == \
+                elif self.uploads_data[row].GetStatus() == \
                         UploadStatus.COMPLETED:
                     icon = self.completedIcon
-                elif self.uploadsData[row].GetStatus() == \
+                elif self.uploads_data[row].GetStatus() == \
                         UploadStatus.FAILED:
                     icon = self.failedIcon
                 return icon
             columnKey = self.GetColumnKeyName(col)
             if self.GetColumnType(col) == "string":
-                return str(self.uploadsData[row].GetValueForKey(columnKey))
+                return str(self.uploads_data[row].GetValueForKey(columnKey))
             else:
-                return self.uploadsData[row].GetValueForKey(columnKey)
+                return self.uploads_data[row].GetValueForKey(columnKey)
         except IndexError:
             # A "list index out of range" exception can be
             # thrown if the row is currently being deleted
@@ -297,7 +302,7 @@ class UploadsModel(wx.dataview.PyDataViewIndexListModel):
 
         self.uud = self.uploadsData
         self.fud = list()
-        self.Filter(self.searchString)
+        self.Filter(self.search_string)
 
     def TryRowValueChanged(self, row, col):
         try:
@@ -396,7 +401,7 @@ class UploadsModel(wx.dataview.PyDataViewIndexListModel):
 
         self.fud = list()
         self.filtered = False
-        self.searchString = ""
+        self.search_string = ""
         self.maxDataViewId = 0
 
     def GetCompletedCount(self):

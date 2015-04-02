@@ -12,19 +12,19 @@ from datetime import datetime
 import CommitDef
 import MyDataVersionNumber
 from FoldersView import FoldersView
-from FoldersModel import FoldersModel
+from folders_model import FoldersModel
 from FoldersController import FoldersController
-from UsersView import UsersView
-from UsersModel import UsersModel
+from users_view import UsersView
+from users_model import UsersModel
 # from GroupsView import GroupsView
 from GroupsModel import GroupsModel
-from VerificationsView import VerificationsView
-from VerificationsModel import VerificationsModel
+from verifications_view import VerificationsView
+from verifications_model import VerificationsModel
 from UploadsView import UploadsView
 from UploadsModel import UploadsModel
 from UploaderModel import UploaderModel
 from LogView import LogView
-from SettingsModel import SettingsModel
+from settings_model import SettingsModel
 from SettingsDialog import SettingsDialog
 from Exceptions import NoActiveNetworkInterface
 from Exceptions import InvalidFolderStructure

@@ -1,6 +1,6 @@
 import wx
 
-from UserModel import UserModel
+from user_model import UserModel
 
 
 class AddFolderDialog(wx.Dialog):
@@ -95,7 +95,7 @@ class AddFolderDialog(wx.Dialog):
         return self.ownerChoice.GetString(self.ownerChoice.GetSelection())
 
     def OnAddNewUser(self, event):
-        from AddUserDialog import AddUserDialog
+        from add_user_dialog import AddUserDialog
 
         addUserDialog = AddUserDialog(self, -1, "Add User", size=(350, 200),
                                       style=wx.DEFAULT_DIALOG_STYLE)

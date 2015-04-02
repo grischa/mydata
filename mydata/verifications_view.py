@@ -2,8 +2,8 @@ import sys
 import wx
 import wx.dataview as dv
 
-from VerificationsModel import VerificationsModel
-from VerificationModel import VerificationModel
+from verifications_model import VerificationsModel
+from verification_model import VerificationModel
 
 from logger.Logger import logger
 import traceback
@@ -33,7 +33,7 @@ class VerificationsView(wx.Panel):
         self.verificationsDataViewControl.AssociateModel(
             self.verificationsModel)
 
-        from VerificationsModel import ColumnType
+        from verifications_model import ColumnType
         for col in range(0, self.verificationsModel.GetColumnCount()):
             if self.verificationsModel.columnTypes[col] == ColumnType.TEXT:
                 column = self.verificationsDataViewControl\

@@ -9,7 +9,7 @@ import os
 import traceback
 
 from logger.Logger import logger
-from SettingsModel import SettingsModel
+from settings_model import SettingsModel
 from Exceptions import DuplicateKey
 from Exceptions import IncompatibleMyTardisVersion
 import MyDataEvents as mde

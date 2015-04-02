@@ -3,7 +3,7 @@ import json
 import urllib
 
 from logger.Logger import logger
-from FacilityModel import FacilityModel
+from facility_model import FacilityModel
 from Exceptions import Unauthorized
 
 

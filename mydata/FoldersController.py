@@ -17,14 +17,14 @@ import poster
 
 import OpenSSH
 
-from ExperimentModel import ExperimentModel
-from DatasetModel import DatasetModel
-from UserModel import UserModel
-from VerificationModel import VerificationModel
-from VerificationModel import VerificationStatus
+from experiment_model import ExperimentModel
+from dataset_model import DatasetModel
+from user_model import UserModel
+from verification_model import VerificationModel
+from verification_model import VerificationStatus
 from UploadModel import UploadModel
 from UploadModel import UploadStatus
-from FolderModel import FolderModel
+from folder_model import FolderModel
 from DataFileModel import DataFileModel
 from Exceptions import DoesNotExist
 from Exceptions import MultipleObjectsReturned
@@ -41,7 +41,7 @@ import wx.lib.newevent
 import wx.dataview
 
 from DragAndDrop import MyFolderDropTarget
-from AddFolderDialog import AddFolderDialog
+from add_folder_dialog import AddFolderDialog
 
 
 class ConnectionStatus():

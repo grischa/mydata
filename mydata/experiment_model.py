@@ -6,9 +6,9 @@ from logger.Logger import logger
 from Exceptions import Unauthorized
 from Exceptions import DoesNotExist
 from Exceptions import MultipleObjectsReturned
-from UserModel import UserProfileModel
+from user_model import UserProfileModel
 from ObjectAclModel import ObjectAclModel
-from SchemaModel import SchemaModel
+from schema_model import SchemaModel
 
 
 class ExperimentModel():

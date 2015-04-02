@@ -5,7 +5,7 @@ from datetime import datetime
 import traceback
 import sys
 
-from SettingsModel import SettingsModel
+from settings_model import SettingsModel
 from UploaderModel import UploaderModel
 from Exceptions import NoActiveNetworkInterface
 from Exceptions import IncompatibleMyTardisVersion

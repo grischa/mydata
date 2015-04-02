@@ -9,8 +9,8 @@ from validate_email import validate_email
 from datetime import datetime
 
 from logger.Logger import logger
-from UserModel import UserModel
-from FacilityModel import FacilityModel
+from user_model import UserModel
+from facility_model import FacilityModel
 from InstrumentModel import InstrumentModel
 from UploaderModel import UploaderModel
 from Exceptions import DuplicateKey

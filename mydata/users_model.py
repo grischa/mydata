@@ -1,12 +1,12 @@
 import wx.dataview
-from UserModel import UserModel
+from user_model import UserModel
 from GroupModel import GroupModel
 import os
 import threading
 
 from logger.Logger import logger
-from Exceptions import DoesNotExist
-from Exceptions import InvalidFolderStructure
+from exceptions import DoesNotExist
+from exceptions import InvalidFolderStructure
 
 
 class UsersModel(wx.dataview.PyDataViewIndexListModel):

@@ -1,9 +1,9 @@
 import wx
 import wx.dataview
-from FolderModel import FolderModel
-from UserModel import UserModel
+from folder_model import FolderModel
+from user_model import UserModel
 from GroupModel import GroupModel
-from ExperimentModel import ExperimentModel
+from experiment_model import ExperimentModel
 import threading
 import os
 import sys

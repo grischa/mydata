@@ -496,7 +496,7 @@ class FoldersModel(wx.dataview.PyDataViewIndexListModel):
                 groupName = self.settingsModel.GetGroupPrefix() + \
                     groupFolderName
                 groupRecord = \
-                    GroupModel.GetGroupByName(self.settingsModel,
+                    GroupModel.get_group_by_name(self.settingsModel,
                                               groupName)
             except DoesNotExist:
                 groupRecord = None

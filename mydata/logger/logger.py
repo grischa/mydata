@@ -22,6 +22,10 @@ class Logger():
     Log window and to ~/.MyData_debug_log.txt
     """
     def __init__(self, name):
+        """
+
+        :rtype : Logger
+        """
         self.name = name
         self.loggerObject = None
         self.loggerOutput = None

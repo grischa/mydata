@@ -4,25 +4,26 @@ import urllib
 
 from logger.logger import logger
 from group_model import GroupModel
+from mytardis import MyTardis
 
 
 class FacilityModel():
 
-    def __init__(self, settingsModel=None, name=None,
-                 facilityJson=None):
+    def __init__(self, settings_model=None, name=None,
+                 facility_json=None):
 
-        self.settingsModel = settingsModel
+        self.settings_model = settings_model
         self.id = None
         self.name = name
-        self.json = facilityJson
+        self.json = facility_json
         self.manager_group = None
 
-        if facilityJson is not None:
-            self.id = facilityJson['id']
+        if facility_json is not None:
+            self.id = facility_json['id']
             if name is None:
-                self.name = facilityJson['name']
+                self.name = facility_json['name']
             self.manager_group = \
-                GroupModel(groupJson=facilityJson['manager_group'])
+                GroupModel(group_json=facility_json['manager_group'])
 
     def __str__(self):
         return "FacilityModel " + self.name
@@ -33,45 +34,13 @@ class FacilityModel():
     def __repr__(self):
         return "FacilityModel " + self.name
 
-    def GetId(self):
-        return self.id
-
-    def GetName(self):
-        return self.name
-
-    def GetManagerGroup(self):
-        return self.manager_group
-
-    def GetResourceUri(self):
+    def get_resource_uri(self):
         return self.json['resource_uri']
 
-    def GetValueForKey(self, key):
-        return self.__dict__[key]
-
-    def GetJson(self):
-        return self.json
-
     @staticmethod
-    def GetFacility(settingsModel, name):
-        myTardisUrl = settingsModel.GetMyTardisUrl()
-        myTardisUsername = settingsModel.GetUsername()
-        myTardisApiKey = settingsModel.GetApiKey()
-
-        url = myTardisUrl + "/api/v1/facility/?format=json&name=" + \
-            urllib.quote(name)
-        headers = {'Authorization': 'ApiKey ' + myTardisUsername + ":" +
-                   myTardisApiKey}
-        session = requests.Session()
-        response = session.get(url=url, headers=headers, stream=False)
-        logger.debug(response.text)
-        if response.status_code != 200:
-            message = response.text
-            response.close()
-            session.close()
-            raise Exception(message)
-        facilitiesJson = response.json()
-        response.close()
-        session.close()
+    def get_facility(settingsModel, name):
+        myt = MyTardis(settings=settingsModel)
+        facilitiesJson = myt.get('facility', {'name': name})
         numFacilitiesFound = facilitiesJson['meta']['total_count']
 
         if numFacilitiesFound == 0:

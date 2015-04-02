@@ -6,7 +6,7 @@ import traceback
 from verification_model import VerificationModel
 from verification_model import VerificationStatus
 from UploadsModel import ColumnType
-from logger.Logger import logger
+from logger.logger import logger
 
 
 class VerificationsModel(wx.dataview.PyDataViewIndexListModel):

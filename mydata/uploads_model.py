@@ -17,7 +17,7 @@ import threading
 import traceback
 
 from upload_model import UploadStatus
-from logger.Logger import logger
+from logger.logger import logger
 
 
 class ColumnType(object):

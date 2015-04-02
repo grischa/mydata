@@ -2,7 +2,7 @@ import requests
 import json
 import traceback
 
-from logger.Logger import logger
+from logger.logger import logger
 from group_model import GroupModel
 from exceptions import IncompatibleMyTardisVersion
 from exceptions import DoesNotExist

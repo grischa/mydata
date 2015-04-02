@@ -4,7 +4,7 @@ from group_model import GroupModel
 import os
 import threading
 
-from logger.Logger import logger
+from logger.logger import logger
 from exceptions import DoesNotExist
 from exceptions import InvalidFolderStructure
 

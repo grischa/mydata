@@ -41,7 +41,7 @@
 # Enquiries: store.star.help@monash.edu
 
 import wx
-from logger.Logger import logger
+from logger.logger import logger
 
 
 class MyDataProgressDialog(wx.Frame):

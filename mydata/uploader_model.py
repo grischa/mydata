@@ -68,7 +68,7 @@ from datetime import datetime
 import wx
 
 import version as MyDataVersionNumber
-from logger.Logger import logger
+from logger.logger import logger
 import open_ssh as OpenSSH
 from exceptions import DoesNotExist
 from exceptions import PrivateKeyDoesNotExist

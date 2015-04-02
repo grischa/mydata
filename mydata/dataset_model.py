@@ -4,7 +4,7 @@ import requests
 import json
 import traceback
 
-from logger.Logger import logger
+from logger.logger import logger
 from exceptions import Unauthorized
 from exceptions import InternalServerError
 

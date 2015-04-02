@@ -10,7 +10,7 @@ import sys
 import traceback
 from datetime import datetime
 
-from logger.Logger import logger
+from logger.logger import logger
 from exceptions import InvalidFolderStructure
 from exceptions import DoesNotExist
 

@@ -25,7 +25,7 @@ from datetime import datetime
 import errno
 import getpass
 
-from logger.Logger import logger
+from logger.logger import logger
 from exceptions import SshException
 from exceptions import ScpException
 from exceptions import StagingHostRefusedSshConnection

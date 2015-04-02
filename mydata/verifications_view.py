@@ -5,7 +5,7 @@ import wx.dataview as dv
 from verifications_model import VerificationsModel
 from verification_model import VerificationModel
 
-from logger.Logger import logger
+from logger.logger import logger
 import traceback
 import threading
 

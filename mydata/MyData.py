@@ -29,7 +29,7 @@ from settings_dialog import SettingsDialog
 from exceptions import NoActiveNetworkInterface
 from exceptions import InvalidFolderStructure
 from enhanced_status_bar import EnhancedStatusBar
-from logger.Logger import logger
+from logger.logger import logger
 from my_data_task_bar_icon import MyDataTaskBarIcon
 from my_data_progress_dialog import MyDataProgressDialog
 import my_data_events as mde

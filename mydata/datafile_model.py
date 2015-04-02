@@ -4,7 +4,7 @@ data model for DataFiles
 import requests
 import urllib
 
-from logger.Logger import logger
+from logger.logger import logger
 from replica_model import ReplicaModel
 from exceptions import DoesNotExist
 from exceptions import MultipleObjectsReturned

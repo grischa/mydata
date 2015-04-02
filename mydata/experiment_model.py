@@ -2,7 +2,7 @@ import requests
 import json
 import urllib2
 
-from logger.Logger import logger
+from logger.logger import logger
 from exceptions import Unauthorized
 from exceptions import DoesNotExist
 from exceptions import MultipleObjectsReturned

@@ -6,7 +6,7 @@ from UploadsModel import UploadsModel
 from UploadModel import UploadModel
 # from MyDataProgressRenderer import MyDataProgressRenderer
 
-from logger.Logger import logger
+from logger.logger import logger
 import traceback
 import threading
 

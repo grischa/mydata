@@ -3,7 +3,7 @@ import urllib
 import requests
 import json
 from datetime import datetime
-from logger.Logger import logger
+from logger.logger import logger
 import traceback
 
 from dataset_model import DatasetModel

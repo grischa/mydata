@@ -10,7 +10,7 @@ from uploader_model import UploaderModel
 from exceptions import NoActiveNetworkInterface
 from exceptions import IncompatibleMyTardisVersion
 from exceptions import DuplicateKey
-from logger.Logger import logger
+from logger.logger import logger
 
 MYDATA_EVENT_TYPE = wx.NewEventType()
 MYDATA_EVENT_BINDER = wx.PyEventBinder(MYDATA_EVENT_TYPE, 1)

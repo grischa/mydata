@@ -8,7 +8,7 @@ import sys
 import os
 import traceback
 
-from logger.Logger import logger
+from logger.logger import logger
 from settings_model import SettingsModel
 from exceptions import DuplicateKey
 from exceptions import IncompatibleMyTardisVersion

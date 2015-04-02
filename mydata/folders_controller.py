@@ -34,7 +34,7 @@ from exceptions import StagingHostRefusedSshConnection
 from exceptions import StagingHostSshPermissionDenied
 from exceptions import ScpException
 
-from logger.Logger import logger
+from logger.logger import logger
 
 import wx
 import wx.lib.newevent

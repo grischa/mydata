@@ -13,7 +13,7 @@ import inspect
 import pkgutil
 import traceback
 
-from SubmitDebugReportDialog import SubmitDebugReportDialog
+from submit_debug_report_dialog import SubmitDebugReportDialog
 
 
 class Logger():

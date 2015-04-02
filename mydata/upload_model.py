@@ -2,7 +2,7 @@
 data models for uploading
 
 '''
-from logger.Logger import logger
+from logger.logger import logger
 import os
 import sys
 import signal

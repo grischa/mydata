@@ -2,10 +2,6 @@
 import wx
 import wx.dataview as dv
 
-from folder_model import FolderModel
-
-from add_folder_dialog import AddFolderDialog
-
 
 class FoldersView(wx.Panel):
 

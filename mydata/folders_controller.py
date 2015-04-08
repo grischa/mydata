@@ -1,9 +1,7 @@
 import os
 import sys
 import threading
-import urllib
 import urllib2
-import requests
 import json
 import Queue
 import io
@@ -13,13 +11,16 @@ import mimetypes
 import time
 import subprocess
 import hashlib
+
+import requests
 import poster
+import wx
+import wx.lib.newevent
+import wx.dataview
 
 import open_ssh
-
 from experiment_model import ExperimentModel
 from dataset_model import DatasetModel
-from user_model import UserModel
 from verification_model import VerificationModel
 from verification_model import VerificationStatus
 from UploadModel import UploadModel
@@ -33,15 +34,9 @@ from exceptions import InternalServerError
 from exceptions import StagingHostRefusedSshConnection
 from exceptions import StagingHostSshPermissionDenied
 from exceptions import ScpException
-
 from logger.logger import logger
-
-import wx
-import wx.lib.newevent
-import wx.dataview
-
 from drag_and_drop import MyFolderDropTarget
-from add_folder_dialog import AddFolderDialog
+from ui.add_folder_dialog import AddFolderDialog
 
 
 class ConnectionStatus():

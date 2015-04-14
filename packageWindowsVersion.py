@@ -16,7 +16,7 @@ if os.path.exists("dist"):
     os.system("del /Q dist\\*.*")
 
 os.system("C:\\Python27\\python.exe .\\pyinstaller\\pyinstaller.py "
-          "--icon=MyData.ico --windowed MyData.py")
+          "--icon=MyData.ico --windowed mydata.py")
 
 # favicon.ico and MyData.ico are really the same thing - favicon.ico
 # is the original from the MyTardis repository, and MyData.ico is the

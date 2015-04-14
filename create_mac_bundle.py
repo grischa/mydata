@@ -97,5 +97,5 @@ setup(
     data_files=resource_files,
     name=appName,
     setup_requires=["py2app"],
-    app=['mydata/MyData.py']
+    app=['mydata/mydata.py']
 )

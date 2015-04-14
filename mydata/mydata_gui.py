@@ -897,11 +897,3 @@ class MyData(wx.App):
 
     def SetConfigPath(self, configPath):
         self.configPath = configPath
-
-
-def main(argv):
-    app = MyData("MyData")
-    app.MainLoop()
-
-if __name__ == "__main__":
-    main(sys.argv)
